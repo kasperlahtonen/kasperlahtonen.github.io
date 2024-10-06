@@ -1,0 +1,419 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define the Color Palette */
+/* Color Palette */
+:root {
+    --ue-red: #C10206; 
+    --ue-red-rgb: 193, 2, 6; /* UE Red */
+    --carmine: #A50113;
+    --carmine-rgb: 165, 1, 19; /* Carmine */
+    --floral-white: #FFFBF2;
+    --floral-white-rgb: 255, 251, 242; /* Floral White */
+    --chinese-white: #DFE2DB;
+    --chinese-white-rgb: 223, 226, 219; /* Chinese White */
+    --raisin-black: #211D21; 
+    --raisin-black-rgb: 33, 29, 33; /* Raisin Black */
+    --rich-black: #010A10; 
+    --rich-black-rgb: 1, 10, 16; /* Rich Black [FOGRA29] */
+}
+
+/* Mouse Ball */
+.mouse-ball {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: var(--chinese-white); /* Use your preferred color */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%) scale(1); /* Default scale is 1 */
+    transition: transform 0.08s ease; /* Keep only the scale transition */
+    opacity: 1; /* Ensure the ball is fully visible */
+}
+
+/* Body Styles */
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--floral-white);
+    color: var(--rich-black);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(var(--floral-white-rgb), 0.8); /* Semi-transparent off-white */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Evenly spread out the links across the full width */
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+header nav ul li a.nav-link {
+    color: var(--rich-black);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px; /* Increase the font size */
+    transition: color 0.3s ease;
+}
+
+/* Gray out non-hovered links */
+header nav ul:hover li a {
+    color: rgba(var(--raisin-black-rgb), 0.5); /* Make all links gray */
+}
+
+/* Keep hovered link off-black */
+header nav ul li a:hover {
+    color: var(--rich-black); /* Keep hovered link off-black */
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 107vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--floral-white);
+}
+
+/* Hero Bottom Content - Full Width */
+.hero-bottom-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;  /* Match the width of .hero */
+    text-align: left;
+    font-size: 27.6vw; /* Proportional to viewport */
+    font-weight: bold;
+    color: var(--rich-black);
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Hero Contact Section */
+.hero-contact {
+    position: absolute;
+    bottom: 50%;
+    right: 0%;
+    padding: 15px 20px;
+    text-align: right;
+    font-size: 14px;
+    color: var(--carmine);
+    max-width: 250px; /* Adjust as needed */
+    z-index: 10;
+}
+
+.hero-contact a {
+    color: inherit; /* Inherit the parent text color */
+    text-decoration: none; /* Remove underline */
+    font-family: inherit; /* Keep the same font */
+    font-size: inherit; /* Keep the same size */
+    transition: none; /* Remove any color transition */
+}
+
+.hero-contact p {
+    margin: 5px 0; /* Space between each line */
+    z-index: 10;
+}
+
+
+
+/* Section Styles */
+.about-section {
+    position: relative;
+    padding: 50px 50px;
+    text-align: center;
+    margin: 140px auto;
+    max-width: 800px;
+    color: var(--rich-black);
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.6;
+    z-index: 10;
+}
+
+.about-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--raisin-black);
+    z-index: 10;
+}
+
+.chapter-break {
+    height: 1px;
+    margin: 10px auto;
+    width: 80%;
+    z-index: 10;
+}
+
+.chapter-break-date {
+    height: 1px;
+    margin: 2px auto;
+    width: 80%;
+    z-index: 10;
+}
+
+
+
+
+.projects-section {
+    padding: 20px;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Style for Projects Header */
+.projects-header {
+    font-size: 15vw; /* Large text */
+    font-weight: bold;
+    position: relative; /* Absolute positioning */
+    top: 0;
+    left: 0; /* Place at top-left corner */
+    margin: 15px; /* Add spacing from the edges */
+    color: var(--rich-black); /* Use appropriate color */
+    z-index: 15; /* Ensure it's above the cards */
+    margin-bottom: 60px;
+}
+
+/* Project item styling */
+.project-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Right side: Company name and work summary */
+.project-info {
+    flex: 1;
+    text-align: left; /* Align text to the left within the block */
+    font-size: 18px;
+    line-height: 1.2; /* Ensure consistent line height */
+    z-index: 10;
+}
+
+.company-name {
+    font-weight: bold;
+    color: var(--rich-black);
+    z-index: 10;
+}
+
+.work-summary {
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--raisin-black);
+    z-index: 10;
+}
+
+/* Center: Project title */
+.project-title {
+    flex: 6; /* Make the title wider */
+    text-align: left;
+    font-size: 4vw; /* Match the large title size */
+    font-weight: bold;
+    color: var(--rich-black);
+    line-height: 1.2; /* Ensure consistent line height */
+    margin-right: 20px;
+    z-index: 10;
+}
+
+/* Left side: Project date */
+.project-date {
+    text-align: left; /* Ensure text is aligned to the left */
+    padding-left: 20px; /* Padding from the left edge */
+    padding-top: 10px;
+    flex: 1;
+    font-size: 18px; /* Ensure the font size matches other content */
+    line-height: 1.2;
+    color: var(--carmine);
+    z-index: 10;
+}
+
+.project-description {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin: 0; /* Remove default margins */
+    margin-left: calc(1 * 100% / 8); /* Align with the project title, adjust value as necessary */
+    width: calc(6 * 100% / 8); /* Set width similar to project title, adjust as necessary */
+    font-size: 16px;
+    line-height: 1.2; /* Ensure consistent line height */
+    color: var(--rich-black);
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.dimmed {
+    opacity: 0.5; /* Adjust the opacity to make it more transparent */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+
+
+
+/* Value Promise Section Styling */
+.value-promise-section {
+    text-align: center;
+    margin: 140px auto;
+    color: var(--rich-black); /* Text color */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.value-promise-text {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center content */
+    font-size: 18px;
+    line-height: 1.6; /* Better readability */
+    position: relative;
+    z-index: 10;
+}
+
+
+
+
+/* Footer Styling */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px; /* Increase padding for a more spacious look */
+    border-top: 2px solid var(--rich-black); /* Add a top border for separation */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Left Section: Logo and Company Name */
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    height: 50px; /* Slightly larger logo */
+    width: auto;
+    transition: filter 0.3s ease;
+    z-index: 10;
+}
+
+.footer-logo:hover {
+    filter: none; /* Restore color on hover */
+}
+
+.footer-company-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--rich-black);
+}
+
+/* Right Section: Contact Information */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align content to the right */
+    gap: 10px;
+}
+
+.footer-right p {
+    margin: 0;
+    color: var(--rich-black);;
+    font-size: 16px;
+}
+
+/* Email Link Styling */
+.footer-right a {
+    color: inherit; /* Inherit the parent text color */
+    text-decoration: none; /* Remove underline */
+    font-family: inherit; /* Keep the same font */
+    font-size: inherit; /* Keep the same size */
+    transition: none; /* Remove any color transition */
+}
+
+.footer-right a:hover {
+    color: var(--ue-red); /* Change to a primary color on hover */
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+    }
+
+    .hero-bottom-content {
+        font-size: 36px; /* Adjust size for smaller screens */
+        z-index: 10;
+    }
+
+    .about-section {
+        padding: 80px 20px;
+        z-index: 10;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+        z-index: 10;
+    }
+    .project-box {
+        height: 30vh; /* Adjust height for smaller screens */
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-left,
+    .footer-right {
+        align-items: center;
+    }
+
+    .footer-right {
+        margin-top: 15px; /* Add spacing between logo and contact info */
+        align-items: center;
+    }
+}
