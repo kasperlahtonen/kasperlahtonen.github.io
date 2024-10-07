@@ -84,15 +84,49 @@ header nav ul li a.nav-link {
     transition: color 0.3s ease;
 }
 
-/* Gray out non-hovered links */
-header nav ul:hover li a {
-    color: rgba(var(--raisin-black-rgb), 0.5); /* Make all links gray */
+/* Main Navigation Styles */
+.main-nav {
+    display: none; /* Hide nav by default for mobile */
 }
 
-/* Keep hovered link off-black */
-header nav ul li a:hover {
-    color: var(--rich-black); /* Keep hovered link off-black */
+/* Mobile Header (top left and right controls) */
+.mobile-header {
+    display: none;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+    padding: 0 20px;
 }
+
+.mobile-header .logo {
+    text-decoration: none;
+    color: var(--rich-black);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--rich-black);
+}
+
+/* When the navigation is visible (toggled by JS) */
+.main-nav.show {
+    display: block; /* Show the nav on mobile when toggled */
+    position: absolute;
+    top: 60px; /* Position below the header */
+    right: 20px; /* Align to the right */
+    background: rgba(var(--floral-white-rgb), 0.95); /* Slightly more opaque */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 200;
+}
+
+
 
 /* Hero Section Styles */
 .hero {
@@ -148,11 +182,11 @@ header nav ul li a:hover {
 
 
 /* Section Styles */
-.about-section {
+.intro-section {
     position: relative;
-    padding: 50px 50px;
+    padding: 50px 50px 10px; /* Reduce bottom padding for line placement */
     text-align: center;
-    margin: 140px auto;
+    margin: 160px auto;
     max-width: 800px;
     color: var(--rich-black);
     font-size: 20px;
@@ -161,12 +195,18 @@ header nav ul li a:hover {
     z-index: 10;
 }
 
-.about-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: var(--raisin-black);
-    z-index: 10;
+.intro-section::after {
+    content: ''; /* Required for pseudo-element */
+    position: absolute;
+    bottom: -10px; /* Adjust to move the line closer to the section */
+    left: 0; /* Start the line at the left edge */
+    height: 2px; /* Adjust the thickness of the line */
+    width: 90%; /* Matches the width of the section */
+    left: 5%; /* Center the line within the section */
+    background-color: var(--carmine); /* Set the underline color */
 }
+
+
 
 .chapter-break {
     height: 1px;
@@ -291,8 +331,23 @@ header nav ul li a:hover {
     z-index: 10;
 }
 
+.value-promise-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/elyria-website-sketch-2.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.05; /* Adjust for transparency */
+    z-index: 5; /* Place it below the text */
+}
+
 .value-promise-text {
-    max-width: 800px; /* Limit width for better readability */
+    max-width: 100%;
+    flex-direction: column; /* Stack content vertically */
+    display: flex;
     margin: 0 auto; /* Center content */
     font-size: 18px;
     line-height: 1.6; /* Better readability */
@@ -300,6 +355,29 @@ header nav ul li a:hover {
     z-index: 10;
 }
 
+.left-align {
+    text-align: left;
+    width: 50%; /* Take up 60% of screen width */
+    margin-bottom: 40px; /* Space between sections */
+    padding-left: 20px; /* Space from the left edge */
+    margin-right: auto; /* Push content to the left */
+}
+
+/* Styling for right-aligned content */
+.right-align {
+    text-align: right;
+    width: 50%; /* Take up 60% of screen width */
+    padding-right: 20px; /* Space from the right edge */
+    margin-left: auto; /* Push content to the right */
+}
+
+/* Header Styles for Value Promise */
+.value-promise-text h2 {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--rich-black);
+}
 
 
 
@@ -374,33 +452,136 @@ header nav ul li a:hover {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
     header nav ul {
-        flex-direction: column;
-        gap: 15px;
-        z-index: 10;
+        display: block; /* Make the nav items stack vertically */
+        text-align: left; /* Align text to the left */
+        padding: 20px;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px; /* Add some spacing between nav items */
+        text-align: left; /* Ensure each item aligns to the left */
+    }
+
+    header nav ul li a.nav-link {
+        font-size: 30px; /* Reduce font size for mobile */
+        text-align: left; /* Align text to the left */
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex; /* Ensure the full nav is visible */
+        justify-content: space-around; /* Evenly spread items */
+    }
+
+
+
+    .hero {
+        height: 105vh; 
+        padding: 20px; /* Add padding for spacing */
+        text-align: center; /* Center-align content */
     }
 
     .hero-bottom-content {
-        font-size: 36px; /* Adjust size for smaller screens */
-        z-index: 10;
+        font-size: 27.6vw; /* Reduce font size for mobile */
+        text-align: center; /* Center-align text */
+        padding: 20px 0; /* Add padding around the text */
+        white-space: normal; /* Allow text to wrap */
     }
 
-    .about-section {
-        padding: 80px 20px;
-        z-index: 10;
+    .hero-contact {
+        position: absolute; /* Change position to relative for better stacking */
+        text-align: right; /* Center the contact section */
+        margin: 20px auto; /* Center-align with margin */
+        padding: 10px 15px; /* Smaller padding */
+        max-width: 80%; /* Take up more space for readability */
+        font-size: 14px; /* Reduce font size for smaller screens */
     }
 
-    .about-section h2 {
-        font-size: 28px;
-        z-index: 10;
-    }
-    .project-box {
-        height: 30vh; /* Adjust height for smaller screens */
+    .hero-contact p {
+        margin: 5px 0; /* Keep space between lines */
     }
 
+
+
+    .intro-section {
+        font-size: 18px; /* Smaller font size for mobile */
+        line-height: 1.4; /* Adjust line height for better readability */
+        max-width: 80%; /* Allow the section to take more screen width */
+        margin-top: 80px; /* Reduce top margin to bring the section closer */
+        padding-top: 0; /* Remove any top padding */
+    }
+
+    .intro-section::after {
+        bottom: 10px;
+        height: 1.5px; /* Slightly thinner line for mobile */
+        width: 90%; /* Reduce width for better fit */
+        left: 5%; /* Center the line */
+    }
+
+
+    /* Adjust Projects Section Padding */
+    .projects-section {
+        padding: 10px 15px; /* Reduce padding for mobile */
+    }
+
+    /* Style for Projects Header */
+    .projects-header {
+        font-size: 12vw; /* Reduce font size for mobile */
+        margin-bottom: 30px; /* Reduce space below header */
+        text-align: center; /* Center-align the header */
+    }
+
+    /* Project item styling */
+    .project-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 15px 0; /* Reduce padding for mobile */
+    }
+
+    /* Right side: Company name and work summary */
+    .project-info {
+        text-align: left; /* Keep text aligned to the left */
+        padding-left: 15px; /* Add padding for spacing */
+        font-size: 16px; /* Reduce font size for readability */
+    }
+
+    .company-name {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .work-summary {
+        font-size: 14px; /* Reduce font size */
+        color: var(--carmine);
+    }
+
+    /* Center: Project title */
     .project-title {
-        font-size: 20px;
+        font-size: 6vw; /* Larger font size but fits mobile screens */
+        margin-right: 0; /* Remove right margin for better fit */
+        padding: 5px 15px; /* Add padding for spacing */
     }
+
+    /* Hide project date on mobile */
+    .project-date {
+        display: none; /* Hide date */
+    }
+
+    /* Project description styling */
+    .project-description {
+        width: 100%; /* Full width for mobile */
+        margin-left: 0; /* Reset left margin */
+        padding: 10px 15px; /* Add padding for spacing */
+        font-size: 14px; /* Adjust font size for readability */
+        line-height: 1.5; /* Increase line height for readability */
+    }
+
+
+
     .site-footer {
         flex-direction: column;
         text-align: center;
