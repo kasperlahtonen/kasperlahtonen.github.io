@@ -186,7 +186,7 @@ header nav ul li a.nav-link {
     position: relative;
     padding: 50px 50px 10px; /* Reduce bottom padding for line placement */
     text-align: center;
-    margin: 160px auto;
+    margin: 140px auto;
     max-width: 800px;
     color: var(--rich-black);
     font-size: 20px;
@@ -210,8 +210,7 @@ header nav ul li a.nav-link {
 
 .chapter-break {
     height: 1px;
-    margin: 10px auto;
-    width: 80%;
+    margin: 5px auto;
     z-index: 10;
 }
 
@@ -229,11 +228,12 @@ header nav ul li a.nav-link {
     padding: 20px;
     width: 100%;
     z-index: 10;
+    align-items: left;
 }
 
 /* Style for Projects Header */
 .projects-header {
-    font-size: 15vw; /* Large text */
+    font-size: 13vw; /* Large text */
     font-weight: bold;
     position: relative; /* Absolute positioning */
     top: 0;
@@ -247,7 +247,8 @@ header nav ul li a.nav-link {
 /* Project item styling */
 .project-item {
     display: flex;
-    align-items: flex-start;
+    align-items: left;
+    width: 90%;
     padding: 30px 0;
     cursor: pointer;
     z-index: 10;
@@ -256,46 +257,43 @@ header nav ul li a.nav-link {
 /* Right side: Company name and work summary */
 .project-info {
     flex: 1;
-    text-align: left; /* Align text to the left within the block */
-    font-size: 18px;
-    line-height: 1.2; /* Ensure consistent line height */
+    margin: 5px;
+    text-align: top; 
+    line-height: 1.4; /* Ensure consistent line height */
     z-index: 10;
 }
 
 .company-name {
     font-weight: bold;
+    font-size: 18px;
     color: var(--rich-black);
     z-index: 10;
 }
 
 .work-summary {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--raisin-black);
+    z-index: 10;
+}
+
+.project-date {
+    flex: 1;
+    font-size: 18px; /* Ensure the font size matches other content */
+    color: var(--carmine);
     z-index: 10;
 }
 
 /* Center: Project title */
 .project-title {
     flex: 6; /* Make the title wider */
-    text-align: left;
-    font-size: 4vw; /* Match the large title size */
+    text-align: top;
+    font-size: 4.5vw; /* Match the large title size */
     font-weight: bold;
     color: var(--rich-black);
     line-height: 1.2; /* Ensure consistent line height */
-    margin-right: 20px;
-    z-index: 10;
-}
-
-/* Left side: Project date */
-.project-date {
-    text-align: left; /* Ensure text is aligned to the left */
-    padding-left: 20px; /* Padding from the left edge */
-    padding-top: 10px;
-    flex: 1;
-    font-size: 18px; /* Ensure the font size matches other content */
-    line-height: 1.2;
-    color: var(--carmine);
+    margin-right: 25px;
+    padding-left: 25px;
     z-index: 10;
 }
 
@@ -303,7 +301,6 @@ header nav ul li a.nav-link {
     padding-bottom: 20px;
     padding-left: 20px;
     margin: 0; /* Remove default margins */
-    margin-left: calc(1 * 100% / 8); /* Align with the project title, adjust value as necessary */
     width: calc(6 * 100% / 8); /* Set width similar to project title, adjust as necessary */
     font-size: 16px;
     line-height: 1.2; /* Ensure consistent line height */
@@ -321,62 +318,182 @@ header nav ul li a.nav-link {
 
 
 
-/* Value Promise Section Styling */
-.value-promise-section {
+/* Styling for the info1 section */
+.info1-section {
+    position: relative;
+    padding: 50px 0;
+    color: var(--rich-black);
+    align-items: center;
+    z-index: 10;
+}
+
+
+/* Styling for the individual boxes */
+.info1-box {
+    position: relative;
+    padding: 20px;
+    max-width: 800px;
     text-align: center;
     margin: 140px auto;
-    color: var(--rich-black); /* Text color */
-    width: 100%;
-    position: relative;
     z-index: 10;
 }
 
-.value-promise-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('assets/elyria-website-sketch-2.png') no-repeat center center;
-    background-size: cover;
-    opacity: 0.05; /* Adjust for transparency */
-    z-index: 5; /* Place it below the text */
-}
-
-.value-promise-text {
-    max-width: 100%;
-    flex-direction: column; /* Stack content vertically */
-    display: flex;
-    margin: 0 auto; /* Center content */
-    font-size: 18px;
-    line-height: 1.6; /* Better readability */
-    position: relative;
-    z-index: 10;
-}
-
-.left-align {
-    text-align: left;
-    width: 50%; /* Take up 60% of screen width */
-    margin-bottom: 40px; /* Space between sections */
-    padding-left: 20px; /* Space from the left edge */
-    margin-right: auto; /* Push content to the left */
-}
-
-/* Styling for right-aligned content */
-.right-align {
-    text-align: right;
-    width: 50%; /* Take up 60% of screen width */
-    padding-right: 20px; /* Space from the right edge */
-    margin-left: auto; /* Push content to the right */
-}
-
-/* Header Styles for Value Promise */
-.value-promise-text h2 {
-    font-size: 24px; /* Adjust font size as needed */
+/* Header Styles */
+.info1-box h2 {
+    font-size: 34px;
+    margin-bottom: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
+    z-index: 10;
+}
+
+/* Text Styles */
+.info1-box p {
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 10;
+}
+
+
+
+
+/* Styling for the articles section */
+.articles-section {
+    padding: 20px;
+    width: 100%;
+    z-index: 10;
+    align-items: left;
+}
+
+.article-item-link {
+    text-decoration: none;
+    display: block; /* Ensure the entire article is clickable */
+}
+
+/* Style for Articles Header */
+.articles-header {
+    font-size: 13vw; /* Large text */
+    position: relative;
+    font-weight: bold;
+    top: 0;
+    left: 0; 
+    color: var(--rich-black); /* Use appropriate color */
+    z-index: 10; /* Ensure it's above the cards */
+    margin-bottom: 30px;
+}
+
+/* Article item styling */
+.article-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--carmine); /* Add a subtle bottom border for each article */
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.article-item:hover {
+    transform: scale(1.02); /* Slightly increase the size */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add subtle shadow */  
+    z-index: 10;
+}
+
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: var(--raisin-black);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    line-height: 1.4;
+    margin-top: 8px;
+    padding-right: 10px;
+}
+
+.article-title {
+    font-size: 3vw;
+    font-weight: bold;
     color: var(--rich-black);
+    flex: 6;
+    margin-right: 20px;
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+
+.article-link {
+    font-size: 14px;
+    color: var(--carmine);
+    position: relative;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.article-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: var(--carmine);
+}
+
+
+
+/* Contact Section Styling */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-content {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    position: relative;
+    z-index: 10;
+}
+
+.contact-content h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: var(--rich-black);
+    font-weight: bold;
+}
+
+.contact-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--rich-black);
+    margin-bottom: 30px;
+}
+
+/* Contact Button */
+.contact-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--carmine);
+    color: var(--floral-white);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--ue-red); /* Darken on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
 }
 
 
@@ -387,13 +504,12 @@ header nav ul li a.nav-link {
     justify-content: space-between;
     align-items: center;
     padding: 30px 40px; /* Increase padding for a more spacious look */
-    border-top: 2px solid var(--rich-black); /* Add a top border for separation */
     width: 100%;
     position: relative;
     bottom: 0;
+    border-top: 2px solid var(--rich-black); /* Add a top border for separation */
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     z-index: 10;
-    backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Left Section: Logo and Company Name */
@@ -546,7 +662,7 @@ header nav ul li a.nav-link {
     /* Right side: Company name and work summary */
     .project-info {
         text-align: left; /* Keep text aligned to the left */
-        padding-left: 15px; /* Add padding for spacing */
+        padding-left: 10px; /* Add padding for spacing */
         font-size: 16px; /* Reduce font size for readability */
     }
 
@@ -556,7 +672,6 @@ header nav ul li a.nav-link {
 
     .work-summary {
         font-size: 14px; /* Reduce font size */
-        color: var(--carmine);
     }
 
     /* Center: Project title */
@@ -568,7 +683,7 @@ header nav ul li a.nav-link {
 
     /* Hide project date on mobile */
     .project-date {
-        display: none; /* Hide date */
+        font-size: 16px; /* Hide date */
     }
 
     /* Project description styling */
@@ -578,6 +693,61 @@ header nav ul li a.nav-link {
         padding: 10px 15px; /* Add padding for spacing */
         font-size: 14px; /* Adjust font size for readability */
         line-height: 1.5; /* Increase line height for readability */
+    }
+
+
+
+     /* Adjust section padding for mobile */
+     .info1-section {
+        padding: 30px 0;
+    }
+
+    /* Full-width boxes on mobile */
+    .info1-box {
+        width: 90%; /* Make the boxes take up more width on smaller screens */
+        padding: 15px; /* Reduce padding */
+    }
+
+    /* Header font size for mobile */
+    .info1-box h2 {
+        font-size: 28px; /* Slightly smaller for mobile */
+        margin-bottom: 12px;
+    }
+
+    /* Text size and line height for mobile */
+    .info1-box p {
+        font-size: 14px; /* Smaller text size for mobile */
+        line-height: 1.6; /* Increase line height for readability */
+    }
+
+
+    .articles-header {
+        font-size: 10vw; /* Reduce header size for mobile */
+        margin-bottom: 10px;
+    }
+
+    .article-item {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 15px 0; /* Adjust padding */
+    }
+
+    .article-meta {
+        font-size: 10px; /* Smaller text for date and author */
+        margin-bottom: 5px; /* Add space between elements */
+        text-align: left; /* Align text to the left on mobile */
+        padding-left: 5px;
+    }
+
+    .article-title {
+        font-size: 5vw; /* Adjust font size for titles */
+        margin-bottom: 5px;
+        padding-left: 0; /* Remove extra padding on smaller screens */
+    }
+
+    .article-link {
+        font-size: 12px; /* Adjust link font size for mobile */
+        margin-top: 10px; /* Add space above link */
+        align-self: flex-start; /* Align link to the left */
     }
 
 
