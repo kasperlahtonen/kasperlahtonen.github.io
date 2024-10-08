@@ -53,13 +53,18 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
     background-color: rgba(var(--floral-white-rgb), 0.8); /* Semi-transparent off-white */
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
+}
+
+.elyria-link {
+    display: none;
 }
 
 header nav ul {
@@ -72,7 +77,6 @@ header nav ul {
 }
 
 header nav ul li {
-    flex: 1;
     text-align: center;
 }
 
@@ -83,49 +87,6 @@ header nav ul li a.nav-link {
     font-size: 35px; /* Increase the font size */
     transition: color 0.3s ease;
 }
-
-/* Main Navigation Styles */
-.main-nav {
-    display: none; /* Hide nav by default for mobile */
-}
-
-/* Mobile Header (top left and right controls) */
-.mobile-header {
-    display: none;
-    justify-content: space-between;
-    align-items: left;
-    width: 100%;
-    padding: 0 20px;
-}
-
-.mobile-header .logo {
-    text-decoration: none;
-    color: var(--rich-black);
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.menu-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--rich-black);
-}
-
-/* When the navigation is visible (toggled by JS) */
-.main-nav.show {
-    display: block; /* Show the nav on mobile when toggled */
-    position: absolute;
-    top: 60px; /* Position below the header */
-    right: 20px; /* Align to the right */
-    background: rgba(var(--floral-white-rgb), 0.95); /* Slightly more opaque */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    z-index: 200;
-}
-
 
 
 /* Hero Section Styles */
@@ -569,30 +530,115 @@ header nav ul li a.nav-link {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
-    header nav ul {
-        display: block; /* Make the nav items stack vertically */
-        text-align: left; /* Align text to the left */
-        padding: 20px;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 40px;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        background-color: rgba(var(--floral-white-rgb), 0.8); /* Semi-transparent off-white */
+        backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
     }
 
+    /* Style the ELYRIA link in the top left corner */
+    .elyria-link {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--rich-black);
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    /* Make hamburger menu always visible */
+    .menu-toggle {
+        display: block; /* Always visible */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 102;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Hamburger bars */
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        background-color: var(--rich-black);
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hide the nav by default */
+    .main-nav {
+        display: none; /* Hidden until toggle */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center; /* Center the text */
+        background-color: rgba(var(--floral-white-rgb), 0.95); /* Semi-transparent background */
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+    /* Show nav when toggle is clicked */
+    .show-nav .main-nav {
+        display: block;
+    }
+
+    /* Center the nav links */
+    header nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column; /* Stack the links vertically */
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Individual link styles */
     header nav ul li {
-        margin-bottom: 10px; /* Add some spacing between nav items */
-        text-align: left; /* Ensure each item aligns to the left */
+        margin-bottom: 10px; /* Add spacing between links */
     }
 
     header nav ul li a.nav-link {
-        font-size: 30px; /* Reduce font size for mobile */
-        text-align: left; /* Align text to the left */
+        font-size: 30px;
+        text-align: center;
+        color: var(--rich-black);
+        text-decoration: none;
+        font-weight: bold;
     }
 
-    .mobile-header {
-        display: none;
+    /* Hamburger menu active state */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .main-nav {
-        display: flex; /* Ensure the full nav is visible */
-        justify-content: space-around; /* Evenly spread items */
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
     }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
 
 
 
@@ -603,9 +649,9 @@ header nav ul li a.nav-link {
     }
 
     .hero-bottom-content {
-        font-size: 27.6vw; /* Reduce font size for mobile */
+        font-size: 27vw; /* Reduce font size for mobile */
         text-align: center; /* Center-align text */
-        padding: 20px 0; /* Add padding around the text */
+        padding: 30px 0px; /* Add padding around the text */
         white-space: normal; /* Allow text to wrap */
     }
 
@@ -625,10 +671,10 @@ header nav ul li a.nav-link {
 
 
     .intro-section {
-        font-size: 18px; /* Smaller font size for mobile */
+        font-size: 14px; /* Smaller font size for mobile */
         line-height: 1.4; /* Adjust line height for better readability */
-        max-width: 80%; /* Allow the section to take more screen width */
-        margin-top: 80px; /* Reduce top margin to bring the section closer */
+        max-width: 100%; /* Allow the section to take more screen width */
+        margin-top: 60px; /* Reduce top margin to bring the section closer */
         padding-top: 0; /* Remove any top padding */
     }
 
@@ -699,13 +745,13 @@ header nav ul li a.nav-link {
 
      /* Adjust section padding for mobile */
      .info1-section {
-        padding: 30px 0;
+        padding: 10px 0;
     }
 
     /* Full-width boxes on mobile */
     .info1-box {
         width: 90%; /* Make the boxes take up more width on smaller screens */
-        padding: 15px; /* Reduce padding */
+        padding: 5px; /* Reduce padding */
     }
 
     /* Header font size for mobile */
@@ -716,8 +762,8 @@ header nav ul li a.nav-link {
 
     /* Text size and line height for mobile */
     .info1-box p {
-        font-size: 14px; /* Smaller text size for mobile */
-        line-height: 1.6; /* Increase line height for readability */
+        font-size: 12px; /* Smaller text size for mobile */
+        line-height: 1.4; /* Increase line height for readability */
     }
 
 
@@ -748,6 +794,27 @@ header nav ul li a.nav-link {
         font-size: 12px; /* Adjust link font size for mobile */
         margin-top: 10px; /* Add space above link */
         align-self: flex-start; /* Align link to the left */
+    }
+
+
+
+    .contact-content {
+        max-width: 100%; /* Take full width on mobile */
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .contact-content h2 {
+        font-size: 24px; /* Smaller font size for headers on mobile */
+    }
+
+    .contact-content p {
+        font-size: 14px; /* Reduce paragraph font size for mobile */
+        line-height: 1.4; /* Adjust line height */
+    }
+
+    .contact-button {
+        font-size: 14px; /* Make the button text smaller */
+        padding: 10px 20px; /* Smaller button padding for mobile */
     }
 
 

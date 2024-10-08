@@ -144,23 +144,15 @@ document.querySelectorAll('.project-item').forEach(item => {
 
 
 
+
+
+// Navigation bar mobile
 const menuToggle = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('.main-nav');
-let lastScrollTop = 0;
+const header = document.querySelector('header');
 
 // Toggle the mobile menu on click
 menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('show');
-});
-
-// Hide or show the mobile nav based on scroll
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Hide the header when scrolling down
-    if (currentScroll > lastScrollTop) {
-        mainNav.classList.remove('show'); // Hide the nav
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+    header.classList.toggle('show-nav');
+    menuToggle.classList.toggle('active');
 });
 
