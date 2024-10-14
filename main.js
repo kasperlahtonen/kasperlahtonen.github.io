@@ -156,3 +156,13 @@ menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
 });
 
+// Close the navigation when a link is clicked
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            header.classList.remove('show-nav');  // Hide the nav
+            menuToggle.classList.remove('active');  // Deactivate hamburger menu
+        });
+    });
+});

@@ -145,12 +145,12 @@ header nav ul li a.nav-link {
 /* Section Styles */
 .intro-section {
     position: relative;
-    padding: 50px 50px 10px; /* Reduce bottom padding for line placement */
+    padding: 50px, 50px;
     text-align: center;
-    margin: 140px auto;
+    margin: 200px auto;
     max-width: 800px;
     color: var(--rich-black);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: normal;
     line-height: 1.6;
     z-index: 10;
@@ -530,6 +530,10 @@ header nav ul li a.nav-link {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
+    .mouse-ball {
+        display: none; /* Hide the mouse ball on mobile devices */
+    }
+
     header {
         display: flex;
         justify-content: center;
@@ -643,7 +647,7 @@ header nav ul li a.nav-link {
 
 
     .hero {
-        height: 105vh; 
+        height: 100vh; 
         padding: 20px; /* Add padding for spacing */
         text-align: center; /* Center-align content */
     }
@@ -652,6 +656,7 @@ header nav ul li a.nav-link {
         font-size: 27vw; /* Reduce font size for mobile */
         text-align: center; /* Center-align text */
         padding: 30px 0px; /* Add padding around the text */
+        margin-bottom: calc(env(safe-area-inset-bottom) + 10px); /* Ensure spacing above the browser UI */
         white-space: normal; /* Allow text to wrap */
     }
 
@@ -674,12 +679,12 @@ header nav ul li a.nav-link {
         font-size: 14px; /* Smaller font size for mobile */
         line-height: 1.4; /* Adjust line height for better readability */
         max-width: 100%; /* Allow the section to take more screen width */
-        margin-top: 60px; /* Reduce top margin to bring the section closer */
-        padding-top: 0; /* Remove any top padding */
+        margin: 100px, 100px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .intro-section::after {
-        bottom: 10px;
         height: 1.5px; /* Slightly thinner line for mobile */
         width: 90%; /* Reduce width for better fit */
         left: 5%; /* Center the line */
