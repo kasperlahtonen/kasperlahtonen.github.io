@@ -21,13 +21,25 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#about-us" class="nav-link">About Us</a></li>
                 <li><a href="#articles" class="nav-link">Articles</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
+        <!-- Three.js Library -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+        <!-- OrbitControls (non-module version) -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+        <!-- GLTFLoader (non-module version) -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+        <!-- Model Container -->
+        <div id="model-container"></div>
+
         <div class="hero-bottom-content">
             ELYRIA
         </div>
@@ -114,26 +126,28 @@
 
     </section>
 
-    <section id="info1" class="info1-section">
-        <div class="info1-box">
-            <h2>What We Do?</h2>
-            <p>
-                If you check out our projects, you’ll get an idea of what we can do, but our real strength is versatility. 
-                With a background in mathematics,
-                we’ve built up a skill set that lets us tackle a wide variety of challenges. We learn fast, 
-                adapt quickly, and always aim to deliver lasting, meaningful results. 
-                That doesn’t mean we say yes to every project – we only take on work where we can deliver true value. 
-                Our goal is to build long-term partnerships by focusing on quality and solving real problems, 
-                not just ticking off boxes on a list. 
-            </p>
-            <div class="chapter-break"></div>    
-            <p>
-                We’re not just coders. If you know exactly what you need, we’ll execute that vision. 
-                But when you don’t – and let’s be honest, often the path isn’t clear – we’re skilled at 
-                finding the right approach and getting things done efficiently. 
-                When you work with us, you get more than code – you get tailored solutions that actually 
-                make a difference and don't become trash the moment the project is over.
-            </p>
+    <!-- About Us Section -->
+    <section id="about-us">
+        <p class="introduction">We are a team of professionals. Let's pretend that means something.</p>
+        <div class="team">
+        <div class="team-member">
+            <img src="assets/mikko_pic.jpg" alt="Person 1">
+            <h3>Person 1</h3>
+            <p>Person 1 is our lead developer with a passion for creating amazing user experiences.</p>
+            <a href="cv1.pdf" class="cv-link">View CV</a>
+        </div>
+        <div class="team-member">
+            <img src="assets/aman_pic.jpg" alt="Person 2">
+            <h3>Person 2</h3>
+            <p>Person 2 specializes in backend development and database management.</p>
+            <a href="cv2.pdf" class="cv-link">View CV</a>
+        </div>
+        <div class="team-member">
+            <img src="assets/aarni_placeholder_pic.jpg" alt="Person 3">
+            <h3>Person 3</h3>
+            <p>Person 3 is our UI/UX designer with an eye for detail and aesthetics.</p>
+            <a href="cv3.pdf" class="cv-link">View CV</a>
+        </div>
         </div>
     </section>
 
@@ -196,6 +210,8 @@
         </div>
     </footer>
 
-<script src="main.js"></script>
+    <!-- Your Custom JavaScript File -->
+    <script src="main_animate.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

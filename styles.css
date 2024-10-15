@@ -36,6 +36,17 @@
     opacity: 1; /* Ensure the ball is fully visible */
 }
 
+/* Styles for the 3D model container */
+#model-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -110px;
+    left: 0;
+    background-color: transparent;
+    z-index: 20; /* Ensure it appears above hero-bottom-content */
+}
+
 /* Body Styles */
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -279,40 +290,74 @@ header nav ul li a.nav-link {
 
 
 
-/* Styling for the info1 section */
-.info1-section {
-    position: relative;
-    padding: 50px 0;
-    color: var(--rich-black);
-    align-items: center;
-    z-index: 10;
-}
-
-
-/* Styling for the individual boxes */
-.info1-box {
-    position: relative;
-    padding: 20px;
-    max-width: 800px;
+/* About Us Section Styles */
+#about-us {
+    background-color: #FFFBF2;
+    color: #010A10;
+    padding: 100px 20px;
     text-align: center;
-    margin: 140px auto;
     z-index: 10;
-}
-
-/* Header Styles */
-.info1-box h2 {
-    font-size: 34px;
-    margin-bottom: 16px;
-    font-weight: bold;
+  }
+  
+  #about-us .introduction {
+    font-size: 18px;
+    margin-bottom: 40px;
     z-index: 10;
-}
-
-/* Text Styles */
-.info1-box p {
+  }
+  
+  #about-us .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  #about-us .team-member {
+    width: 250px;
+    margin: 20px;
+    text-align: left;
+    z-index: 10;
+  }
+  
+  #about-us .team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #010A10;
+  }
+  
+  #about-us .team-member h3 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+    z-index: 10;
+  }
+  
+  #about-us .team-member p {
     font-size: 16px;
-    line-height: 1.4;
+    margin-bottom: 10px;
     z-index: 10;
-}
+  }
+  
+  #about-us .cv-link {
+    font-size: 16px;
+    color: #A50113;
+    text-decoration: none;
+    border-bottom: 1px solid #A50113;
+    z-index: 10;
+  }
+  
+  #about-us .cv-link:hover {
+    color: #010A10;
+    border-bottom: 1px solid #010A10;
+  }
+
+  #about-us .team-member img {
+    transition: transform 0.3s;
+  }
+  
+  #about-us .team-member img:hover {
+    transform: scale(1.05);
+  }
 
 
 
