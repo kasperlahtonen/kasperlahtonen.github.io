@@ -80,6 +80,13 @@ const projectDescriptions = {
         <div class="chapter-break-date"></div>
         <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Pyomo, Excel</p>
     `,
+    'project-6': `
+        <p>Developed an optimization model to minimize costs and time for transporting cars from Germany to Finland. 
+        We also created an interactive dashboard, allowing the end user to visualize model results and explore scenarios directly. 
+        The tool is now used daily, playing a critical role in the company's operations.</p>
+        <div class="chapter-break-date"></div>
+        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Pyomo, Excel</p>
+    `,
 };
 
 // Function to toggle project details

@@ -36,15 +36,18 @@
     opacity: 1; /* Ensure the ball is fully visible */
 }
 
-/* Styles for the 3D model container */
 #model-container {
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: -110px;
-    left: 0;
-    background-color: transparent;
-    z-index: 20; /* Ensure it appears above hero-bottom-content */
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;  /* Full viewport width */
+    height: 500vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure no overflow */
+    z-index: 20;
 }
 
 /* Body Styles */
@@ -464,7 +467,6 @@ header nav ul li a.nav-link {
     max-width: 800px; /* Limit width for better readability */
     margin: 0 auto;
     padding: 40px;
-    border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     position: relative;
     z-index: 10;
@@ -579,6 +581,10 @@ header nav ul li a.nav-link {
         display: none; /* Hide the mouse ball on mobile devices */
     }
 
+    #model-container {
+        width: 100%;
+    }
+
     header {
         display: flex;
         justify-content: center;
@@ -591,6 +597,11 @@ header nav ul li a.nav-link {
         width: 100%;
         background-color: rgba(var(--floral-white-rgb), 0.8); /* Semi-transparent off-white */
         backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
+    }
+
+    /* Hero Contact Section */
+    .hero-contact {
+        bottom: 28%;
     }
 
     /* Style the ELYRIA link in the top left corner */

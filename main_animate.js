@@ -38,13 +38,13 @@ loader.load(
     // Optional adjustments
     model.position.set(0, 0, 0);
     model.scale.set(0.014, 0.014, 0.014);
-    model.rotation.set(0.6158, 2.357, 0);  // Example: Rotate 45 degrees around Y axis
+    model.rotation.set(0.6158, 2.357, 0);  
 
     // Center the camera
     const box = new THREE.Box3().setFromObject(model);
     const center = box.getCenter(new THREE.Vector3());
     controls.target.copy(center);
-    camera.position.set(center.x, center.y, center.z + 5);
+    camera.position.set(center.x, center.y, center.z + 5.1);
   },
   undefined,
   function (error) {
