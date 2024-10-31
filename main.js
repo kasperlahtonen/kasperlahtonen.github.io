@@ -52,40 +52,34 @@ const projectDescriptions = {
         This approach provides a new method for fair attribution of environmental impact, enabling more precise tracking
         of emissions in complex maritime operations.</p>
         <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> R, Python, NumPy, Pandas, Tableau.</p>
     `,
     'project-2': `
         <p>Developed a machine learning model to predict vessel Fuel Consumption (FOC) with limited data,
         integrating vessel characteristics and real-time weather data for enhanced prediction accuracy.
         Achieved 10% prediction accuracy.</p>
         <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Scikit-learn, SciPy, SQL, Git, Docker, Google Compute Engine</p>
     `,
     'project-3': `
         <p>Developed a Python-based calculator to determine optimal fuel mixes compliant with FuelEU Maritime regulations,
         implementing complex mathematical formulas to calculate greenhouse gas (GHG) intensity of maritime vessels.</p>
         <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Pyomo</p>
     `,
+    // 'project-4': `
+    //     <p>Developed a model to standardize ship emission calculations across years with varying 'own' and 'spot' ship usage.
+    //     Implemented a weighted average approach using historical ton-mile data to ensure accurate year-on-year emission comparisons.</p>
+    //     <div class="chapter-break-date"></div>
+    // `,
     'project-4': `
-        <p>Developed a model to standardize ship emission calculations across years with varying 'own' and 'spot' ship usage.
-        Implemented a weighted average approach using historical ton-mile data to ensure accurate year-on-year emission comparisons.</p>
-        <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Excel, Data Analysis, Mathematical Modeling</p>
-    `,
-    'project-5': `
         <p>Built an optimization model to determine optimal order quantities for emergency room supplies. The solution ensures
         critical item availability while minimizing costs, integrating historical data and demand forecasting to reduce
         stockout risks. Also, built an interface that allowed easy use of the tool.</p>
         <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Pyomo, Excel</p>
     `,
     'project-6': `
         <p>Developed an optimization model to minimize costs and time for transporting cars from Germany to Finland. 
         We also created an interactive dashboard, allowing the end user to visualize model results and explore scenarios directly. 
         The tool is now used daily, playing a critical role in the company's operations.</p>
         <div class="chapter-break-date"></div>
-        <p><strong>Tech Stack:</strong> Python, NumPy, Pandas, Pyomo, Excel</p>
     `,
 };
 

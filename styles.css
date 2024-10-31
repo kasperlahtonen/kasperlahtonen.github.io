@@ -430,7 +430,7 @@ header nav ul li a.nav-link {
 }
 
 .article-title {
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: bold;
     color: var(--rich-black);
     flex: 6;
@@ -735,7 +735,8 @@ header nav ul li a.nav-link {
         font-size: 14px; /* Smaller font size for mobile */
         line-height: 1.4; /* Adjust line height for better readability */
         max-width: 100%; /* Allow the section to take more screen width */
-        margin: 100px, 100px;
+        margin-top: 20px;
+        margin-bottom: 100px;
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -835,7 +836,7 @@ header nav ul li a.nav-link {
 
     .article-item {
         flex-direction: column; /* Stack items vertically on smaller screens */
-        padding: 15px 0; /* Adjust padding */
+        
     }
 
     .article-meta {
@@ -847,14 +848,12 @@ header nav ul li a.nav-link {
 
     .article-title {
         font-size: 5vw; /* Adjust font size for titles */
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         padding-left: 0; /* Remove extra padding on smaller screens */
     }
 
     .article-link {
-        font-size: 12px; /* Adjust link font size for mobile */
-        margin-top: 10px; /* Add space above link */
-        align-self: flex-start; /* Align link to the left */
+        display: none;
     }
 
 
