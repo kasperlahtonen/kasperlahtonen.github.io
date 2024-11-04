@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Company</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
 </head>
 <body>
     <div class="mouse-ball"></div>
 
-    <!-- Header Section -->
     <header>
-        <a href="#hero" class="elyria-link">ELYRIA</a>
+        <a href="index.html#hero" class="elyria-link">ELYRIA</a>
         <div class="menu-toggle">
             <span></span>
             <span></span>
@@ -20,9 +19,10 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#about-us" class="nav-link">About Us</a></li>
-                <li><a href="#articles" class="nav-link">Articles</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">Team</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="#footer-placeholder" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -58,16 +58,13 @@
     </section>
 
     <!-- Summary Section -->
-    <section id="intro" class="intro-section">
+    <section class="intro-section">
         <p>
             We’re mathematicians who code, bringing a unique approach to modeling,
             analytics, and AI solutions that help businesses thrive. Our goal is to turn
             complex technological ideas into simple, impactful solutions
-            that create lasting value, not just quick fixes.
-
-            <div class="chapter-break"></div>
-            
-            </p>
+            that create lasting value, not just quick fixes.  
+        </p>
     </section>
 
     <section id="projects" class="project-section">
@@ -76,27 +73,17 @@
 
         <div class="project-item" id="project-6">
 
-            <div class="project-title">COST OTPIMISATION ON TRUCK ROUTING PROBLEM</div>
-    
-            <div class="project-info">
-                <div class="company-name">Bahn-Express</div>
-                <div class="work-summary">Route Optimisation</div>
-            </div>
-        </div>
-
-        <div class="project-item" id="project-1">
-
-            <div class="project-title">ALLOCATING ICE BREAKER EMISSIONS</div>
+            <div class="project-title">Cost Optimisation on Truck Routing</div>
     
             <div class="project-info">
                 <div class="company-name">Company 1</div>
-                <div class="work-summary">Data analysis</div>
+                <div class="work-summary">Route Optimisation</div>
             </div>
         </div>
 
         <div class="project-item" id="project-2">
     
-            <div class="project-title">VESSEL FUEL CONSUMPTION PREDICTION MODEL</div>
+            <div class="project-title">Vessel Fuel Consumption Preditction Model</div>
 
             <div class="project-info">
                 <div class="company-name">Company 2</div>
@@ -106,7 +93,7 @@
 
         <div class="project-item" id="project-3">
     
-            <div class="project-title">FUEL MIX EMISSION CALCULATOR</div>
+            <div class="project-title">Fuel Mix Emission Calculator</div>
 
             <div class="project-info">
                 <div class="company-name">Company 3</div>
@@ -114,19 +101,9 @@
             </div>
         </div>
 
-        <!-- <div class="project-item" id="project-4">
-    
-            <div class="project-title">EMISSION CORRECTION MODEL</div>
-
-            <div class="project-info">
-                <div class="company-name">Company 4</div>
-                <div class="work-summary">Data analysis</div>
-            </div>
-        </div> -->
-
         <div class="project-item" id="project-4">
 
-            <div class="project-title">HOSPITAL INVENTORY OPTIMISATION</div>
+            <div class="project-title">Hospital Inventory Optimisation</div>
 
             <div class="project-info">
                 <div class="company-name">Company 4</div>
@@ -135,90 +112,50 @@
 
         </div>
 
+        <div class="view-all-container">
+            <a href="projects.html" class="view-all-link">View All Projects →</a>
+        </div>
+
     </section>
 
-    <!-- About Us Section -->
-    <section id="about-us">
-        <p class="introduction">Your team of professionals.</p>
-        <div class="team">
-        <div class="team-member">
-            <img src="assets/mikko_pic.jpg" alt="Person 1">
-            <h3>Person 1</h3>
-            <p>Person 1 is our lead developer with a passion for creating amazing user experiences.</p>
-            <a href="cv1.pdf" class="cv-link">View CV</a>
-        </div>
-        <div class="team-member">
-            <img src="assets/aman_pic.jpg" alt="Person 2">
-            <h3>Person 2</h3>
-            <p>Person 2 specializes in backend development and database management.</p>
-            <a href="cv2.pdf" class="cv-link">View CV</a>
-        </div>
-        <div class="team-member">
-            <img src="assets/aarni_placeholder_pic.jpg" alt="Person 3">
-            <h3>Person 3</h3>
-            <p>Person 3 is our UI/UX designer with an eye for detail and aesthetics.</p>
-            <a href="cv3.pdf" class="cv-link">View CV</a>
-        </div>
-        </div>
-    </section>
+    <section class="insights-section">
 
-    <section id="articles" class="articles-section">
-        <h2 class="articles-header">Articles</h2>
-    
-        <!-- Article 1 -->
-        <a href="your-article-link.html" class="article-item-link">
-            <div class="article-item" id="article-1">
-                <div class="article-header">
-                    <div class="article-meta">
-                        <div class="article-date">8 Oct 2024</div>
-                        <div class="article-author">Kasper Lahtonen</div>
-                    </div>
-                    <div class="article-title"> AI's Impact on How We Work</div>
-                    <div class="article-link">
-                        <span>Read Article -></span>
-                    </div>
-                </div>
+        <div class="article-item">
+            <div class="article-image">
+                <img src="assets/elyria-logo.png" alt="Insight 1">
             </div>
-        </a>    
-    </section>
+            <div class="article-content">
+                <h3 class="article-title">The Future of AI in Data Analysis</h3>
+                <p class="article-meta">By Jane Doe, 8 Oct 2024</p>
+                <p class="article-preview">Explore how artificial intelligence is reshaping the field of data analysis, from predictive models to automation breakthroughs. This article dives into real-world applications and future trends.</p>
+                <a href="article1.html" class="read-more-link">Read More →</a>
+            </div>
+        </div>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-content">
-            <h2>So, What's Next?</h2>
-            <p>
-                If you’re reading this far, there’s probably something on your mind we can help with – 
-                whether it’s an automation idea, a tricky data problem, or just an itch to make something better. 
-                Getting started with us is simple. We can sit down for a coffee or lunch, talk through 
-                your ideas, and quickly figure out what a first step might look like. We often walk away from 
-                a first meeting with a plan for a proof of concept or an idea for MVP – it’s that easy. 
-                So, give us a call or shoot us an email, and let’s get started. 
-            </p>
-            <a href="mailto:contact@elyria.ai" class="contact-button">Get in Touch</a>
+        <div class="article-item">
+            <div class="article-image">
+                <img src="assets/elyria-logo.png" alt="Insight 2">
+            </div>
+            <div class="article-content">
+                <h3 class="article-title">Optimizing Business Operations with AI</h3>
+                <p class="article-meta">By John Smith, 12 Sep 2024</p>
+                <p class="article-preview">Learn how businesses are using AI to optimize operations, reduce costs, and enhance decision-making processes. Discover practical tips and insights for integrating AI into business strategies.</p>
+                <a href="article2.html" class="read-more-link">Read More →</a>
+            </div>
         </div>
     </section>
-    
 
+    <div id="footer-placeholder"></div>
 
-
-    <footer class="site-footer">
-        <!-- Left side: Logo and Company Name -->
-        <div class="footer-left">
-            <!-- <img src="assets/elyria-logo.png" alt="Elyria Logo" class="footer-logo"> -->
-            <span class="footer-company-name">ELYRIA</span>
-        </div>
-        
-        <!-- Right side: Contact Information -->
-        <div class="footer-right">
-            <!-- Email Link -->
-            <p><a href="mailto:contact@elyria.ai">contact@elyria.ai</a></p>
-
-            <!-- Phone Link for FaceTime or Calling App -->
-            <p><a href="tel:+1234567890">+123 456 7890</a></p>
-
-            <!-- Address Link to Google Maps -->
-            <p><a href="https://www.google.com/maps?q=Keilaranta+3" target="_blank">Keilaranta 3</a></p>
-        </div>
-    </footer>
+    <script>
+        // JavaScript to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 
     <!-- Your Custom JavaScript File -->
     <script src="main_animate.js"></script>

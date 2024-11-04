@@ -1,0 +1,123 @@
+.about-us-section {
+    padding: 20px;
+    padding-top: 150px;
+    text-align: center;
+    background-color: var(--floral-white); /* Optional background color */
+    position: relative;
+}
+
+.about-header {
+    font-size: 3vw;
+    margin-bottom: 20px;
+    color: var(--rich-black);
+    font-weight: bold;
+    position: relative;
+    z-index: 30;
+}
+
+.about-introduction {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.2em;
+    color: var(--raisin-black);
+    position: relative;
+    z-index: 30;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    z-index: 30;
+}
+
+.team-member {
+    width: 250px;
+    text-align: center;
+    margin: 0 15px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    color: var(--rich-black);
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: var(--raisin-black);
+    margin-bottom: 15px;
+}
+
+.cv-link {
+    display: inline-block;
+    color: var(--carmine);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* Mobile optimization for about-us-section */
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 15px;
+        padding-top: 100px; /* Adjust top padding for better fit */
+        text-align: center;
+    }
+
+    .about-header {
+        font-size: 6vw; /* Increase relative font size for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .about-introduction {
+        max-width: 90%; /* Allow text to take up more width */
+        margin: 0 auto 30px; /* Reduce bottom margin */
+        font-size: 1em; /* Reduce font size */
+    }
+
+    .team {
+        flex-direction: column; /* Stack team members vertically */
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    .team-member {
+        width: 90%; /* Adjust width to fit within screen */
+        margin: 0 auto; /* Center align the items */
+    }
+
+    .team-member img {
+        width: 80%; /* Reduce image size for mobile */
+        margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+        font-size: 1em; /* Smaller heading size */
+    }
+
+    .team-member p {
+        font-size: 0.85em; /* Reduce paragraph font size */
+    }
+
+    .cv-link {
+        font-size: 0.9em; /* Adjust link font size */
+    }
+}

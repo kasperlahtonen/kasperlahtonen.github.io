@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+</head>
+<body>
+    <div class="mouse-ball"></div>
+    <header>
+        <a href="index.html#hero" class="elyria-link">ELYRIA</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">Team</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="#footer-placeholder" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us-section">
+        <h2 class="about-header">Meet Our Team</h2>
+        <p class="about-introduction">
+            Your team of experts in data, mathematics, and AI, combining the rigors of mathematics with the creativity of design.
+        </p>
+        <div class="team">
+            <div class="team-member">
+                <img src="assets/mikko_pic.jpg" alt="Person 1">
+                <h3>Person 1</h3>
+                <p>Person 1 is our lead developer with a passion for creating amazing user experiences.</p>
+                <a href="cv1.pdf" class="cv-link">View CV</a>
+            </div>
+            <div class="team-member">
+                <img src="assets/aman_pic.jpg" alt="Person 2">
+                <h3>Person 2</h3>
+                <p>Person 2 specializes in backend development and database management.</p>
+                <a href="cv2.pdf" class="cv-link">View CV</a>
+            </div>
+            <div class="team-member">
+                <img src="assets/aarni_placeholder_pic.jpg" alt="Person 3">
+                <h3>Person 3</h3>
+                <p>Person 3 is our UI/UX designer with an eye for detail and aesthetics.</p>
+                <a href="cv3.pdf" class="cv-link">View CV</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>

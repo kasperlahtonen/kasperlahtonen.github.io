@@ -1,0 +1,202 @@
+.project-intro-section {
+    padding: 20px;
+    padding-top: 20vh;
+    padding-bottom: 15vh;
+    background-color: var(--floral-white);
+    text-align: center;
+    color: var(--rich-black);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    min-height: 60vh;
+}
+
+.project-intro-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--rich-black);
+    z-index: 10;
+    position: relative;
+}
+
+/* Apply border styling only to the text content */
+.project-intro-content {
+    display: inline-block; /* Shrink to fit the content */
+    padding: 10px;
+    border-left: 2px solid var(--carmine);
+    border-right: 2px solid var(--carmine);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--rich-black);
+    max-width: 80%;
+    z-index: 10;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+.projects-section {
+    width: 90%;
+    z-index: 10;
+    align-items: left;
+}
+
+/* Project item styling */
+.project-item {
+    display: flex;
+    align-items: left;
+    width: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Right side: Company name and work summary */
+.project-info {
+    flex: 1;
+    margin: 5px;
+    text-align: top; 
+    line-height: 1.4; /* Ensure consistent line height */
+    z-index: 10;
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--rich-black);
+    z-index: 10;
+}
+
+.work-summary {
+    font-weight: normal;
+    font-size: 16px;
+    color: var(--carmine);
+    z-index: 10;
+}
+
+.project-date {
+    flex: 1;
+    font-size: 18px; /* Ensure the font size matches other content */
+    color: var(--carmine);
+    z-index: 10;
+}
+
+/* Center: Project title */
+.project-title {
+    flex: 6; /* Make the title wider */
+    text-align: top;
+    font-size: 4.5vw; /* Match the large title size */
+    font-weight: bold;
+    color: var(--rich-black);
+    line-height: 1.2; /* Ensure consistent line height */
+    margin-right: 25px;
+    padding-right: 60px;
+    padding-bottom: 20px;
+    z-index: 10;
+}
+
+.project-description {
+    padding-bottom: 20px;
+    padding-left: 30px;
+    margin: 0; /* Remove default margins */
+    width: calc(6 * 100% / 8); /* Set width similar to project title, adjust as necessary */
+    font-size: 16px;
+    line-height: 1.2; /* Ensure consistent line height */
+    color: var(--rich-black);
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.dimmed {
+    opacity: 0.5; /* Adjust the opacity to make it more transparent */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Styles for Project Intro and Projects Section */
+@media (max-width: 768px) {
+    /* Mobile Optimization for Project Introduction Section */
+    .project-intro-section {
+        padding: 30px 15px; /* Reduce padding for smaller screens */
+        margin: 50px auto; /* Adjust margin to fit mobile layout */
+        margin-top: 80px;
+        max-width: 90%; /* Increase width to fill more of the screen */
+        font-size: 16px; /* Decrease font size for better fit */
+        line-height: 1.5; /* Adjust line height */
+        box-shadow: 0 2px 8px rgba(165, 1, 19, 0.1); /* Subtle shadow for mobile */
+        border-radius: 8px; /* Slightly adjust corner rounding */
+    }
+
+    /* Header Styling for Mobile */
+    .project-intro-header {
+        font-size: 1.8rem; /* Reduce header font size */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    /* Content Styling for Mobile */
+    .project-intro-content {
+        padding: 8px 20px; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Smaller font size */
+        line-height: 1.4; /* Adjust line height */
+    }
+
+    .projects-section {
+        width: 100%; /* Full width for mobile */
+        padding: 0 10px; /* Add padding for better readability */
+    }
+
+    /* Project item styling */
+    .project-item {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        align-items: flex-start; /* Align content to the left */
+        padding-bottom: 15px; /* Add space between project items */
+    }
+
+    .project-title {
+        font-size: 6vw; /* Responsive font size */
+        margin-right: 0; /* Remove right margin */
+        padding-right: 0; /* Remove right padding */
+        padding-bottom: 5px; /* Reduce padding */
+    }
+
+    .project-info {
+        font-size: 14px; /* Reduce font size */
+        line-height: 1.3; /* Adjust line height for better readability */
+    }
+
+    .company-name {
+        font-size: 16px; /* Slightly smaller font size */
+    }
+
+    .work-summary {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .project-date {
+        font-size: 14px; /* Adjust font size */
+        padding-bottom: 5px; /* Add spacing */
+    }
+
+    .project-description {
+        padding-bottom: 15px;
+        padding-left: 15px;
+        width: 100%; /* Full width for mobile */
+        font-size: 14px; /* Smaller font size */
+    }
+}

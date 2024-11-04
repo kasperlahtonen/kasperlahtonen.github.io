@@ -38,7 +38,7 @@
 
 #model-container {
     position: absolute;
-    top: 38%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50vw;  /* Full viewport width */
@@ -62,13 +62,15 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* Header Styles */
+/* General Header Styles */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
     padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 20px;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -77,15 +79,30 @@ header {
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
 }
 
+/* ELYRIA Link (Logo) */
 .elyria-link {
-    display: none;
+    color: var(--rich-black);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px; /* Adjust as needed */
+    margin-right: auto;
+    transition: color 0.3s ease;
+}
+
+.elyria-link:hover {
+    color: var(--carmine); /* Change color on hover for effect */
+}
+
+/* Navigation Menu */
+header nav {
+    display: flex;
+    align-items: center;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around; /* Evenly spread out the links across the full width */
-    width: 100vw;
+    gap: 30px; /* Space between navigation items */
     margin: 0;
     padding: 0;
 }
@@ -98,9 +115,15 @@ header nav ul li a.nav-link {
     color: var(--rich-black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 35px; /* Increase the font size */
+    font-size: 18px; /* Smaller font for a professional look */
     transition: color 0.3s ease;
 }
+
+/* Mobile Styles */
+.menu-toggle {
+    display: none;
+}
+
 
 
 /* Hero Section Styles */
@@ -115,7 +138,7 @@ header nav ul li a.nav-link {
 /* Hero Bottom Content - Full Width */
 .hero-bottom-content {
     position: absolute;
-    bottom: 0;
+    bottom: 0; /* Dynamic positioning */
     left: 0;
     right: 0;
     width: 100%;  /* Match the width of .hero */
@@ -124,8 +147,15 @@ header nav ul li a.nav-link {
     font-weight: bold;
     color: var(--rich-black);
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible; /* Ensure content doesn't get clipped */
     z-index: 10;
+}
+
+/* Adjust bottom for wider viewports */
+@media (min-aspect-ratio: 16/9) {
+    .hero-bottom-content {
+        bottom: -10vh; /* Push it out of view when the aspect ratio is too wide */
+    }
 }
 
 /* Hero Contact Section */
@@ -135,7 +165,7 @@ header nav ul li a.nav-link {
     right: 0%;
     padding: 15px 20px;
     text-align: right;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--carmine);
     max-width: 250px; /* Adjust as needed */
     z-index: 10;
@@ -156,29 +186,37 @@ header nav ul li a.nav-link {
 
 
 
-/* Section Styles */
+/* Intro Section Styling */
 .intro-section {
-    position: relative;
-    padding: 50px, 50px;
-    text-align: center;
-    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    margin: 150px auto;
     max-width: 800px;
     color: var(--rich-black);
     font-size: 18px;
-    font-weight: normal;
-    line-height: 1.6;
+    line-height: 1.8;
+    box-shadow: 0 4px 16px rgba(165, 1, 19, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Slightly rounded corners */
+    text-align: center;
+    position: relative;
     z-index: 10;
 }
 
+/* Remove unwanted pseudo-element */
 .intro-section::after {
-    content: ''; /* Required for pseudo-element */
-    position: absolute;
-    bottom: -10px; /* Adjust to move the line closer to the section */
-    left: 0; /* Start the line at the left edge */
-    height: 2px; /* Adjust the thickness of the line */
-    width: 90%; /* Matches the width of the section */
-    left: 5%; /* Center the line within the section */
-    background-color: var(--carmine); /* Set the underline color */
+    content: none; /* Remove any unintended pseudo-element */
+}
+
+/* Paragraph Styling */
+.intro-section p {
+    margin: 0;
+    padding: 0 15px;
+    z-index: 10;
+    position: relative;
 }
 
 
@@ -208,7 +246,7 @@ header nav ul li a.nav-link {
 
 /* Style for Projects Header */
 .projects-header {
-    font-size: 13vw; /* Large text */
+    font-size: 10vw; /* Large text */
     font-weight: bold;
     position: relative; /* Absolute positioning */
     top: 0;
@@ -233,7 +271,6 @@ header nav ul li a.nav-link {
 .project-info {
     flex: 1;
     margin: 5px;
-    text-align: top; 
     line-height: 1.4; /* Ensure consistent line height */
     z-index: 10;
 }
@@ -274,7 +311,7 @@ header nav ul li a.nav-link {
 
 .project-description {
     padding-bottom: 20px;
-    padding-left: 20px;
+    padding-left: 25px;
     margin: 0; /* Remove default margins */
     width: calc(6 * 100% / 8); /* Set width similar to project title, adjust as necessary */
     font-size: 16px;
@@ -290,168 +327,86 @@ header nav ul li a.nav-link {
     transition: opacity 0.3s ease; /* Smooth transition effect */
 }
 
-
-
-
-/* About Us Section Styles */
-#about-us {
-    background-color: #FFFBF2;
-    color: #010A10;
-    padding: 100px 20px;
+/* View All Link Styling */
+.view-all-container {
     text-align: center;
-    z-index: 10;
-  }
-  
-  #about-us .introduction {
-    font-size: 18px;
-    margin-bottom: 40px;
-    z-index: 10;
-  }
-  
-  #about-us .team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  #about-us .team-member {
-    width: 250px;
-    margin: 20px;
-    text-align: left;
-    z-index: 10;
-  }
-  
-  #about-us .team-member img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 2px solid #010A10;
-  }
-  
-  #about-us .team-member h3 {
-    font-size: 24px;
-    margin: 15px 0 10px;
-    z-index: 10;
-  }
-  
-  #about-us .team-member p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    z-index: 10;
-  }
-  
-  #about-us .cv-link {
-    font-size: 16px;
-    color: #A50113;
-    text-decoration: none;
-    border-bottom: 1px solid #A50113;
-    z-index: 10;
-  }
-  
-  #about-us .cv-link:hover {
-    color: #010A10;
-    border-bottom: 1px solid #010A10;
-  }
-
-  #about-us .team-member img {
-    transition: transform 0.3s;
-  }
-  
-  #about-us .team-member img:hover {
-    transform: scale(1.05);
-  }
-
-
-
-
-/* Styling for the articles section */
-.articles-section {
-    padding: 20px;
-    width: 100%;
-    z-index: 10;
-    align-items: left;
+    margin-top: 20px;
+    z-index: 100;
 }
 
-.article-item-link {
+.view-all-link {
+    font-size: 16px;
+    color: var(--rich-black);
     text-decoration: none;
-    display: block; /* Ensure the entire article is clickable */
-}
-
-/* Style for Articles Header */
-.articles-header {
-    font-size: 13vw; /* Large text */
-    position: relative;
     font-weight: bold;
-    top: 0;
-    left: 0; 
-    color: var(--rich-black); /* Use appropriate color */
-    z-index: 10; /* Ensure it's above the cards */
-    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    z-index: 100;
 }
 
-/* Article item styling */
+.view-all-link:hover {
+    color: var(--carmine); /* Optional hover effect */
+}
+
+
+
+
+/* Insights Section Styling */
+.insights-section {
+    max-width: 1200px;
+    padding: 20px;
+    padding-top: 15vh;
+    position: relative;
+}
+
 .article-item {
     display: flex;
-    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--carmine);
+    padding-bottom: 20px;
     position: relative;
-    width: 100%;
-    padding-bottom: 10px;
-    border-bottom: 0.5px solid var(--carmine); /* Add a subtle bottom border for each article */
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.article-item:hover {
-    transform: scale(1.02); /* Slightly increase the size */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add subtle shadow */  
-    z-index: 10;
+.article-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
+.article-content {
+    flex: 1;
+    margin-top: 40px;
+}
 
-.article-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    z-index: 10;
+.article-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--rich-black);
 }
 
 .article-meta {
     font-size: 14px;
     color: var(--raisin-black);
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    line-height: 1.4;
-    margin-top: 8px;
-    padding-right: 10px;
+    margin-bottom: 15px;
 }
 
-.article-title {
-    font-size: 4vw;
-    font-weight: bold;
-    color: var(--rich-black);
-    flex: 6;
-    margin-right: 20px;
-    padding-left: 10px;
-    line-height: 1.2;
+.article-preview {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-
-.article-link {
-    font-size: 14px;
-    color: var(--carmine);
-    position: relative;
-    margin-right: 10px;
+.read-more-link {
     text-decoration: none;
+    color: var(--carmine);
+    font-weight: bold;
 }
 
-.article-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color: var(--carmine);
+.read-more-link:hover {
+    text-decoration: underline;
 }
+
 
 
 
@@ -489,86 +444,21 @@ header nav ul li a.nav-link {
 /* Contact Button */
 .contact-button {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--carmine);
-    color: var(--floral-white);
+    padding: 15px 40px;
+    background-color: var(--floral-white); /* White background */
+    color: var(--rich-black); /* Black text */
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 2px; /* Slightly rounded edges */
+    border: 0.5px solid var(--rich-black); /* Thin black outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Small subtle shadow */
+    transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: var(--ue-red); /* Darken on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
-}
-
-
-
-/* Footer Styling */
-.site-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px; /* Increase padding for a more spacious look */
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    border-top: 2px solid var(--rich-black); /* Add a top border for separation */
-    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-    z-index: 10;
-}
-
-/* Left Section: Logo and Company Name */
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-logo {
-    height: 50px; /* Slightly larger logo */
-    width: auto;
-    transition: filter 0.3s ease;
-    z-index: 10;
-}
-
-.footer-logo:hover {
-    filter: none; /* Restore color on hover */
-}
-
-.footer-company-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--rich-black);
-}
-
-/* Right Section: Contact Information */
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align content to the right */
-    gap: 10px;
-}
-
-.footer-right p {
-    margin: 0;
-    color: var(--rich-black);;
-    font-size: 16px;
-}
-
-/* Email Link Styling */
-.footer-right a {
-    color: inherit; /* Inherit the parent text color */
-    text-decoration: none; /* Remove underline */
-    font-family: inherit; /* Keep the same font */
-    font-size: inherit; /* Keep the same size */
-    transition: none; /* Remove any color transition */
-}
-
-.footer-right a:hover {
-    color: var(--ue-red); /* Change to a primary color on hover */
+    color: var(--ue-red); /* Red text on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow on hover */
 }
 
 
@@ -647,12 +537,12 @@ header nav ul li a.nav-link {
     .main-nav {
         display: none; /* Hidden until toggle */
         position: absolute;
-        top: 80px;
+        top: 50px;
         left: 0;
         right: 0;
         width: 100%;
         text-align: center; /* Center the text */
-        background-color: rgba(var(--floral-white-rgb), 0.95); /* Semi-transparent background */
+        background-color: rgba(var(--floral-white-rgb), 0.8); /* Semi-transparent background */
         padding: 20px 0;
         z-index: 100;
     }
@@ -790,6 +680,10 @@ header nav ul li a.nav-link {
         padding: 5px 15px; /* Add padding for spacing */
     }
 
+    .projects-header {
+        font-size: 12vw;
+    }
+
     /* Hide project date on mobile */
     .project-date {
         font-size: 16px; /* Hide date */
@@ -830,31 +724,45 @@ header nav ul li a.nav-link {
     }
 
 
-    .articles-header {
-        font-size: 10vw; /* Reduce header size for mobile */
-        margin-bottom: 10px;
+    .insights-section {
+        padding: 15px;
+        margin: 80px auto 30px; /* Reduce margins */
     }
 
     .article-item {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        
+        flex-direction: column; /* Stack items vertically */
+        margin-bottom: 30px;
+        padding-bottom: 15px;
     }
 
-    .article-meta {
-        font-size: 10px; /* Smaller text for date and author */
-        margin-bottom: 5px; /* Add space between elements */
-        text-align: left; /* Align text to the left on mobile */
-        padding-left: 5px;
+    .article-image img {
+        width: 100%; /* Take full width for better fit */
+        height: auto;
+        margin-bottom: 15px; /* Add margin below for spacing */
+    }
+
+    .article-content {
+        text-align: left; /* Align text to the left */
     }
 
     .article-title {
-        font-size: 5vw; /* Adjust font size for titles */
-        margin-bottom: 0px;
-        padding-left: 0; /* Remove extra padding on smaller screens */
+        font-size: 22px; /* Reduce font size */
+        margin-bottom: 8px;
     }
 
-    .article-link {
-        display: none;
+    .article-meta {
+        font-size: 12px; /* Smaller text for meta information */
+        margin-bottom: 10px;
+    }
+
+    .article-preview {
+        font-size: 14px; /* Smaller preview font */
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .read-more-link {
+        font-size: 14px; /* Adjust link font size */
     }
 
 
@@ -895,4 +803,80 @@ header nav ul li a.nav-link {
         margin-top: 15px; /* Add spacing between logo and contact info */
         align-items: center;
     }
+}
+
+
+
+/* ------------------------------ */
+/* ----------- FOOTER ----------- */
+/* ------------------------------ */
+
+
+/* Footer Styles */
+.site-footer {
+    padding: 50px 20px;
+    padding-top: 7vh;
+    text-align: center;
+    background-color: var(--floral-white); /* Adjust background as needed */
+    color: var(--rich-black);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    max-width: 800px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.footer-heading {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+}
+
+.footer-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #333; /* Adjust color as needed */
+    z-index: 100;
+}
+
+.footer-locations {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.location {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.location h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.location p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer-bottom {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 20px;
+}
+
+.footer-bottom a {
+    color: var(--rich-black);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
 }

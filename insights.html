@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="insights.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+</head>
+<body>
+    <div class="mouse-ball"></div>
+    <header>
+        <a href="index.html#hero" class="elyria-link">ELYRIA</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">Team</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="#footer-placeholder" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="insights-section">
+
+        <div class="article-item">
+            <div class="article-image">
+                <img src="assets/elyria-logo.png" alt="Insight 1">
+            </div>
+            <div class="article-content">
+                <h3 class="article-title">The Future of AI in Data Analysis</h3>
+                <p class="article-meta">By Jane Doe, 8 Oct 2024</p>
+                <p class="article-preview">Explore how artificial intelligence is reshaping the field of data analysis, from predictive models to automation breakthroughs. This article dives into real-world applications and future trends.</p>
+                <a href="article1.html" class="read-more-link">Read More →</a>
+            </div>
+        </div>
+
+        <div class="article-item">
+            <div class="article-image">
+                <img src="assets/elyria-logo.png" alt="Insight 2">
+            </div>
+            <div class="article-content">
+                <h3 class="article-title">Optimizing Business Operations with AI</h3>
+                <p class="article-meta">By John Smith, 12 Sep 2024</p>
+                <p class="article-preview">Learn how businesses are using AI to optimize operations, reduce costs, and enhance decision-making processes. Discover practical tips and insights for integrating AI into business strategies.</p>
+                <a href="article2.html" class="read-more-link">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>

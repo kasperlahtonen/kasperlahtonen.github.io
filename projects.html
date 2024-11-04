@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+</head>
+<body>
+    <div class="mouse-ball"></div>
+    <header>
+        <a href="index.html#hero" class="elyria-link">ELYRIA</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">Team</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="#footer-placeholder" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="project-intro" class="project-intro-section">
+        <h2 class="project-intro-header">Our Approach to Projects</h2>
+        <div class="project-intro-content">
+            <p>
+                At ELYRIA, we believe in creating meaningful and lasting value through our work. 
+                Each project is approached with a commitment to quality, efficiency, and innovation. 
+                We work closely with our clients to understand their unique needs and challenges, 
+                allowing us to develop tailored solutions that drive real impact. Our goal is not just to deliver, 
+                but to exceed expectations and build long-term partnerships based on trust and transparency.
+            </p>
+        </div>
+    </section>
+    
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+
+        <div class="project-item" id="project-6">
+            <div class="project-title">Cost Optimization on Truck Routing Problem</div>
+            <div class="project-info">
+                <div class="company-name">Bahn-Express</div>
+                <div class="work-summary">Route Optimization</div>
+            </div>
+        </div>
+
+        <div class="project-item" id="project-1">
+            <div class="project-title">Allocating Ice Breaker Emissions</div>
+            <div class="project-info">
+                <div class="company-name">Company 1</div>
+                <div class="work-summary">Data Analysis</div>
+            </div>
+        </div>
+
+        <div class="project-item" id="project-2">
+            <div class="project-title">Vessel Fuel Consumption Prediction Model</div>
+            <div class="project-info">
+                <div class="company-name">Company 2</div>
+                <div class="work-summary">Data Analysis</div>
+            </div>
+        </div>
+
+        <div class="project-item" id="project-3">
+            <div class="project-title">Fuel Mix Emission Calculator</div>
+            <div class="project-info">
+                <div class="company-name">Company 3</div>
+                <div class="work-summary">Data Analysis</div>
+            </div>
+        </div>
+
+        <div class="project-item" id="project-4">
+            <div class="project-title">Hospital Inventory Optimization</div>
+            <div class="project-info">
+                <div class="company-name">Company 4</div>
+                <div class="work-summary">Data Analysis</div>
+            </div>
+        </div>
+
+        <div class="project-item" id="project-5">
+    
+            <div class="project-title">Emission Correction Model</div>
+
+            <div class="project-info">
+                <div class="company-name">Company 5</div>
+                <div class="work-summary">Data analysis</div>
+            </div>
+        </div> 
+
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>

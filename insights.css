@@ -1,0 +1,112 @@
+/* Insights Section Styling */
+.insights-section {
+    max-width: 1200px;
+    padding: 20px;
+    padding-top: 15vh;
+    position: relative;
+}
+
+.article-item {
+    display: flex;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--carmine);
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 10;
+}
+
+.article-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.article-content {
+    flex: 1;
+    margin-top: 40px;
+}
+
+.article-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--rich-black);
+}
+
+.article-meta {
+    font-size: 14px;
+    color: var(--raisin-black);
+    margin-bottom: 15px;
+}
+
+.article-preview {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more-link {
+    text-decoration: none;
+    color: var(--carmine);
+    font-weight: bold;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile optimization for insights section */
+@media (max-width: 768px) {
+    .insights-section {
+        padding: 15px;
+        margin: 80px auto 30px; /* Reduce margins */
+    }
+
+    .article-item {
+        flex-direction: column; /* Stack items vertically */
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+    }
+
+    .article-image img {
+        width: 100%; /* Take full width for better fit */
+        height: auto;
+        margin-bottom: 15px; /* Add margin below for spacing */
+    }
+
+    .article-content {
+        text-align: left; /* Align text to the left */
+    }
+
+    .article-title {
+        font-size: 22px; /* Reduce font size */
+        margin-bottom: 8px;
+    }
+
+    .article-meta {
+        font-size: 12px; /* Smaller text for meta information */
+        margin-bottom: 10px;
+    }
+
+    .article-preview {
+        font-size: 14px; /* Smaller preview font */
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .read-more-link {
+        font-size: 14px; /* Adjust link font size */
+    }
+}
