@@ -14,7 +14,7 @@ renderer.shadowMap.enabled = true;  // Enable shadows
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;  // Optional for softer shadows
 document.getElementById('model-container').appendChild(renderer.domElement);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.2);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
 directionalLight.position.set(5, 10, 7.5);
 directionalLight.castShadow = true;  // Enable shadow casting
 scene.add(directionalLight);
