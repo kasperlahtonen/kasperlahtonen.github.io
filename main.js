@@ -167,3 +167,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+const elyriaLink = document.querySelector('.elyria-link');
+const letters = elyriaLink.querySelectorAll('span');
+
+// Define the sequence of letters to highlight
+const highlightSequence = [
+    [0, 4],    // E and I (for N)
+    [4, 1],    // I and L (for U)
+    [5, 1],    // A and L (for M)
+    [5, 3],    // A and R (for S)
+    // No space needed as per your request
+    [3],       // R (for R)
+    [0],       // E (for E)
+    [1, 4, 5], // L, I, and A (for V)
+    [0],       // E (for E)
+    [5],       // A (for A)
+    [1],       // L (for L)
+    // No space
+    [5],       // A (for A)
+    // No space
+    [3],       // R (for R)
+    [0],       // E (for E)
+    [5],       // A (for A)
+    [1],       // L (for L)
+    // No space
+    [1],       // L (for L)
+    [4],       // I (for I)
+    [0],       // E (for E)
+];
+
+// Initialize a counter to track the current step in the sequence
+let currentStep = 0;
+
+// Function to highlight letters based on the current step
+function highlightLetters() {
+    // Remove any existing highlights
+    letters.forEach(letter => letter.classList.remove('highlighted'));
+
+    // Get the indices of letters to highlight at the current step
+    const indices = highlightSequence[currentStep];
+
+    // Highlight the letters for the current step
+    indices.forEach(index => {
+        letters[index].classList.add('highlighted');
+    });
+
+    // Increment the step counter
+    currentStep++;
+
+    // Reset the counter if we've reached the end of the sequence
+    if (currentStep >= highlightSequence.length) {
+        currentStep = 0;
+    }
+}
+
+// Event listeners to trigger the highlight on hover
+elyriaLink.addEventListener('mouseenter', highlightLetters);
+elyriaLink.addEventListener('mouseleave', () => {
+    // Remove highlights when not hovering
+    letters.forEach(letter => letter.classList.remove('highlighted'));
+});

@@ -11,7 +11,7 @@
     --ue-red: #C10206; 
     --ue-red-rgb: 193, 2, 6; /* UE Red */
     --carmine: #A50113;
-    --carmine-rgb: 165, 1, 19; /* Carmine */
+    --carmine-rgb: 165, 1, 19; 
     --floral-white: #FFFBF2;
     --floral-white-rgb: 255, 251, 242; /* Floral White */
     --chinese-white: #DFE2DB;
@@ -79,18 +79,25 @@ header {
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
 }
 
-/* ELYRIA Link (Logo) */
+/* Base Styling for the Link */
 .elyria-link {
     color: var(--rich-black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 30px; /* Adjust as needed */
+    font-size: 2.5rem;
     margin-right: auto;
+    transition: color 0.3s ease;
+    display: inline-flex; /* To keep letters inline */
+}
+
+/* Styling for All Letters */
+.elyria-link span {
     transition: color 0.3s ease;
 }
 
-.elyria-link:hover {
-    color: var(--carmine); /* Change color on hover for effect */
+/* Styling for the Random Letter on Hover */
+.elyria-link .highlighted {
+    color: var(--carmine); /* Change color on hover */
 }
 
 /* Navigation Menu */
@@ -261,7 +268,7 @@ header nav ul li a.nav-link {
 .project-item {
     display: flex;
     align-items: left;
-    width: 90%;
+    width: 95%;
     padding: 30px 0;
     cursor: pointer;
     z-index: 10;
@@ -300,7 +307,7 @@ header nav ul li a.nav-link {
 .project-title {
     flex: 6; /* Make the title wider */
     text-align: top;
-    font-size: 4.5vw; /* Match the large title size */
+    font-size: 2.5rem; /* Match the large title size */
     font-weight: bold;
     color: var(--rich-black);
     line-height: 1.2; /* Ensure consistent line height */
@@ -336,7 +343,7 @@ header nav ul li a.nav-link {
 }
 
 .view-all-link {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--rich-black);
     text-decoration: none;
     font-weight: bold;
@@ -351,11 +358,47 @@ header nav ul li a.nav-link {
 
 
 
+
+
+
+/* Logo Section Styling */
+.logos-section {
+    display: flex;
+    justify-content: space-around; /* Closer spacing between logos */
+    align-items: center;
+    padding-top: 60px;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-image {
+    max-width: 15%;
+    height: auto;
+    filter: blur(1px); /* Apply initial blur */
+    opacity: 1; /* Lower initial opacity */
+    transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    transform: scale(0.95); /* Slightly smaller initially */
+}
+
+/* On hover, remove blur, increase opacity, and scale up */
+.logo-image:hover {
+    filter: blur(0px); /* Remove blur */
+    opacity: 1; /* Fully visible */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+
+
+
+
 /* Insights Section Styling */
 .insights-section {
     max-width: 1200px;
     padding: 20px;
-    padding-top: 15vh;
+    padding-top: 5vh;
     position: relative;
     z-index: 10;
 }
@@ -382,7 +425,7 @@ header nav ul li a.nav-link {
 }
 
 .article-title {
-    font-size: 30px;
+    font-size: 2rem;
     margin-bottom: 10px;
     color: var(--rich-black);
 }
@@ -724,6 +767,25 @@ header nav ul li a.nav-link {
         font-size: 12px; /* Smaller text size for mobile */
         line-height: 1.4; /* Increase line height for readability */
     }
+
+
+
+
+
+
+    .logos-section {
+        flex-wrap: wrap;
+        gap: 10px; /* Space between logos when wrapping */
+        justify-content: center;
+        padding: 20px; /* Reduce padding for mobile */
+    }
+
+    .logo-image {
+        max-width: 100px; /* Slightly smaller logos for smaller screens */
+    }
+
+
+
 
 
     .insights-section {
