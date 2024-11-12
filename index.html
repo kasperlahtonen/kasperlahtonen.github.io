@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Company</title>
+    <title>ELYRIA</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
 </head>
 <body>
     <div class="mouse-ball"></div>
+    <!-- Three.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <!-- OrbitControls (non-module version) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- GLTFLoader (non-module version) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
     <header>
         <a href="index.html#hero" class="elyria-link">
             <span>E</span><span>L</span><span>Y</span><span>R</span><span>I</span><span>A</span>
         </a>
+
+        <div id="model-container"></div>
+
         <div class="menu-toggle">
             <span></span>
             <span></span>
@@ -30,17 +42,11 @@
     </header>
 
     <section id="hero" class="hero">
-        <!-- Three.js Library -->
-        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 
-        <!-- OrbitControls (non-module version) -->
-        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
-        <!-- GLTFLoader (non-module version) -->
-        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-
-        <!-- Model Container -->
-        <div id="model-container"></div>
+        <div class="hero-intro-text">
+            <p>          We are mathematicians who code, specializing in modeling, analytics, and AI solutions. 
+                Most of our assignments start as one-off projects but often evolve into long term partnerships.</p>
+        </div>
 
         <div class="hero-bottom-content">
             ELYRIA
@@ -121,12 +127,54 @@
 
 
     <section class="logos-section">
-        <img src="assets/19.png" alt="Logo 1" class="logo-image">
-        <img src="assets/20.png" alt="Logo 2" class="logo-image">
-        <img src="assets/21.png" alt="Logo 3" class="logo-image">
-        <img src="assets/22.png" alt="Logo 4" class="logo-image">
-        <img src="assets/23.png" alt="Logo 5" class="logo-image">
-        <img src="assets/24.png" alt="Logo 6" class="logo-image">
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/19.png" alt="Logo 1" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>Hover the home, let letters alight,</p>
+            </div>
+        </div>
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/20.png" alt="Logo 2" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>Colors will shift in the glowing light.</p>
+            </div>
+        </div>
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/21.png" alt="Logo 3" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>Combine them in pairs, discover numbers anew,</p>
+            </div>
+        </div>
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/22.png" alt="Logo 4" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>Add if you must, till a secret shines through.</p>
+            </div>
+        </div>
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/23.png" alt="Logo 5" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>Decode the enigma that's hidden inside,</p>
+            </div>
+        </div>
+        <div class="logo-container">
+            <div class="logo-front">
+                <img src="assets/24.png" alt="Logo 6" class="logo-image">
+            </div>
+            <div class="logo-back">
+                <p>A message awaits for you to untie.<p>
+            </div>
+        </div>
     </section>
     
 

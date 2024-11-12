@@ -27,27 +27,30 @@
     position: fixed;
     width: 25px;
     height: 25px;
-    background-color: var(--chinese-white); /* Use your preferred color */
+    background-color: var(--floral-white); /* Use your preferred color */
     border-radius: 50%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 10000;
     transform: translate(-50%, -50%) scale(1); /* Default scale is 1 */
     transition: transform 0.08s ease; /* Keep only the scale transition */
     opacity: 1; /* Ensure the ball is fully visible */
+    mix-blend-mode: difference; /* Apply blend mode */
 }
 
 #model-container {
     position: absolute;
-    top: 32%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50vw;  /* Full viewport width */
-    height: 500vh; /* Full viewport height */
+    top: 5px;
+    left: 10px;
+    width: 100px;  /* Full viewport width */
+    height: 100px; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Ensure no overflow */
     z-index: 20;
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.2s ease; /* Smooth fade transition */
+    cursor: pointer;
 }
 
 /* Body Styles */
@@ -68,7 +71,7 @@ header {
     justify-content: center;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     padding-left: 15px;
     padding-right: 20px;
     position: fixed;
@@ -79,20 +82,25 @@ header {
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for a glass-like feel */
 }
 
-/* Base Styling for the Link */
+/* Elyria Text Styling - Initially Hidden */
 .elyria-link {
+    display: none; /* Hidden initially */
     color: var(--rich-black);
-    text-decoration: none;
     font-weight: bold;
     font-size: 2.5rem;
-    margin-right: auto;
-    transition: color 0.3s ease;
-    display: inline-flex; /* To keep letters inline */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    z-index: 30; /* Make sure it's above the 3D model when visible */
+    transition: opacity 0.2s ease;
+    opacity: 1;
 }
 
 /* Styling for All Letters */
 .elyria-link span {
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
+    opacity: 1;
 }
 
 /* Styling for the Random Letter on Hover */
@@ -104,6 +112,7 @@ header {
 header nav {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 header nav ul {
@@ -112,6 +121,7 @@ header nav ul {
     gap: 30px; /* Space between navigation items */
     margin: 0;
     padding: 0;
+    padding-top: 15px;
 }
 
 header nav ul li {
@@ -136,11 +146,30 @@ header nav ul li a.nav-link {
 /* Hero Section Styles */
 .hero {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--rich-black);
     height: 107vh;
     width: 100%;
     overflow: hidden;
+    text-align: left;
     background-color: var(--floral-white);
 }
+
+
+.hero-intro-text {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 96%;
+    margin: 0px;
+    z-index: 20;
+    position: absolute;
+    bottom: calc(27.6vw + 20px); /* Place it above .hero-bottom-content */
+    text-indent: 4em;
+}
+
 
 /* Hero Bottom Content - Full Width */
 .hero-bottom-content {
@@ -167,11 +196,12 @@ header nav ul li a.nav-link {
 
 /* Hero Contact Section */
 .hero-contact {
+    display: none;
     position: absolute;
-    bottom: 50%;
-    right: 0%;
-    padding: 15px 20px;
-    text-align: right;
+    bottom: 50%; 
+    align-items: center;
+    padding: 20px 20px;
+    text-align: center;
     font-size: 16px;
     color: var(--carmine);
     max-width: 250px; /* Adjust as needed */
@@ -361,20 +391,46 @@ header nav ul li a.nav-link {
 
 
 
-/* Logo Section Styling */
+/* Logo Container Styling */
 .logos-section {
     display: flex;
-    justify-content: space-around; /* Closer spacing between logos */
     align-items: center;
-    padding-top: 60px;
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 100%;
     position: relative;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    perspective: 1000px;
     z-index: 10;
 }
 
-.logo-image {
-    max-width: 15%;
+.logo-container {
+    width: 90%; /* Smaller width */
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.logo-container.clicked {
+    transform: rotateY(180deg);
+}
+
+/* Front of the Logo */
+.logo-front, .logo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.logo-front img {
+    width: 100%;
     height: auto;
     filter: blur(1px); /* Apply initial blur */
     opacity: 1; /* Lower initial opacity */
@@ -383,11 +439,24 @@ header nav ul li a.nav-link {
 }
 
 /* On hover, remove blur, increase opacity, and scale up */
-.logo-image:hover {
+.logo-front img:hover {
     filter: blur(0px); /* Remove blur */
     opacity: 1; /* Fully visible */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
+.logo-back {
+    background-color: var(--floral-white); 
+    color: var(--rich-black); 
+    transform: rotateY(180deg);
+    padding: 5px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive; /* or whichever font you chose */
+    font-size: 1.2rem;
+    color: var(--carmine); /* Adjust color as needed */
+}
+
+
 
 
 
@@ -517,8 +586,8 @@ header nav ul li a.nav-link {
     }
 
     #model-container {
-        width: 65%;
-        height: 50%
+        top: 0px;
+        left: 0px;
     }
 
     header {
@@ -526,7 +595,7 @@ header nav ul li a.nav-link {
         justify-content: center;
         align-items: center;
         padding-top: 10px;
-        padding-bottom: 40px;
+        padding-bottom: 50px;
         position: fixed;
         top: 0;
         z-index: 100;
@@ -663,6 +732,14 @@ header nav ul li a.nav-link {
 
     .hero-contact p {
         margin: 5px 0; /* Keep space between lines */
+    }
+
+    .hero-intro-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        text-align: left;
+        margin-bottom: calc(env(safe-area-inset-bottom) + 15px + 8vw) ;
     }
 
 

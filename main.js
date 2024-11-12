@@ -3,7 +3,7 @@ let mouseX = 0, mouseY = 0;
 let ballX = 0, ballY = 0;
 
 const ball = document.querySelector('.mouse-ball');
-const speed = 0.14;
+const speed = 0.25;
 
 // Update the mouse position on move
 document.addEventListener('mousemove', (event) => {
@@ -237,3 +237,80 @@ elyriaLink.addEventListener('mouseleave', () => {
     // Remove highlights when not hovering
     letters.forEach(letter => letter.classList.remove('highlighted'));
 });
+
+
+
+
+
+
+
+
+
+
+
+let activeLogo = null;
+
+document.querySelectorAll('.logo-container').forEach(container => {
+    container.addEventListener('click', () => {
+        // If another logo is already active, revert it to the front
+        if (activeLogo && activeLogo !== container) {
+            activeLogo.classList.remove('clicked');
+        }
+        
+        // Toggle the clicked state of the current logo
+        container.classList.toggle('clicked');
+        
+        // Set the new active logo if it's flipped, or clear if flipped back
+        activeLogo = container.classList.contains('clicked') ? container : null;
+    });
+});
+
+
+
+
+let scrollThreshold;
+
+function setScrollThreshold() {
+    if (window.innerWidth <= 768) { // Mobile screen size
+        scrollThreshold = 100;
+        document.querySelector(".elyria-link").style.display = 'none'; // Start hidden on mobile
+    } else { // Larger screens
+        scrollThreshold = 400;
+    }
+}
+
+// Set the initial scroll threshold
+setScrollThreshold();
+
+// Update threshold on window resize to handle orientation changes or resizing
+window.addEventListener("resize", setScrollThreshold);
+
+window.addEventListener("scroll", () => {
+    const elyriaText = document.querySelector(".elyria-link");
+    const modelContainer = document.getElementById("model-container");
+
+    if (window.scrollY > scrollThreshold) {
+        // Show the ELYRIA text and hide the 3D model
+        elyriaText.style.display = 'block';
+        elyriaText.style.opacity = '1';
+        modelContainer.style.opacity = '0';
+    } else {
+        // Hide the ELYRIA text and show the 3D model
+        elyriaText.style.opacity = '0';
+        modelContainer.style.opacity = '1';
+
+        // Use a timeout to set display: none after opacity transition
+        setTimeout(() => {
+            if (window.scrollY <= scrollThreshold) {
+                elyriaText.style.display = 'none';
+            }
+        }, 600); // Match the CSS transition time
+    }
+});
+
+
+
+
+
+
+
